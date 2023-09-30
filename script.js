@@ -8,7 +8,7 @@ Array.from(document.getElementsByClassName("albumGridElement")).forEach(albumGri
                 text = element.innerHTML.toLowerCase().replace(/\s/g,"")
             }
         })
-        window.open(URL, "https://maxncheesephotography.pic-time.com/-"+text+"/gallery")
+        window.open("https://maxncheesephotography.pic-time.com/-"+text+"/gallery","_blank")
     })
 })
 
