@@ -6,14 +6,6 @@ body {
     text-align: center;
 }
 
-#mainLogo {
-    background-color: blue;
-    width: 150px;
-    height: 75px;
-    margin: auto;
-    margin-top: 50px;
-}
-
 #companyText {
     font-size: large;
     letter-spacing: 3.5px;
@@ -35,11 +27,17 @@ body {
     margin-top: 2px;
 }
 
-#menuDiv {
+.menuDiv {
     margin-top: 50px;
-    display: flex;
-    flex-direction: horizontal;
+    display: grid;
+    grid-template-columns: 33% 10% 33%;
+    gap: 5%;
     justify-content: center;
+}
+
+#menuLogo {
+    background: url('maxncheese.png') no-repeat;
+    background-size:contain;
 }
 
 .menuElement {
@@ -50,9 +48,23 @@ body {
     letter-spacing: 3.5px;
 }
 
-#all {
+.menuElementDiv {
+    display: flex;
+    flex-direction: horizontal;
+}
+
+#leftMenu {
+    justify-content: right;
+}
+
+#rightMenu {
+    justify-content: left;
+}
+
+#home {
     color: #444444;
 }
+
 
 #albumGrid {
     margin-top: 75px;
