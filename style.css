@@ -1,0 +1,105 @@
+body {
+    background-color: #edecea;
+    font-family: 'Gotham Narrow SSm A' , 'Gotham Narrow SSm B' , sans-serif;
+    text-transform: uppercase;
+    color: #444444;
+    text-align: center;
+}
+
+#mainLogo {
+    background-color: blue;
+    width: 150px;
+    height: 75px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+#companyText {
+    font-size: large;
+    letter-spacing: 3.5px;
+    margin-bottom: 25px;
+}
+
+#companyInfo {
+    margin: auto;
+    font-size: small;
+    margin-top: 75px;
+    font-family: 'Gotham Narrow SSm A' , 'Gotham Narrow SSm B' , sans-serif;
+    text-transform: none;
+    color: #444444;
+    letter-spacing: 0.5px;
+}
+
+.companyElement {
+    margin: 0;
+    margin-top: 2px;
+}
+
+#menuDiv {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: horizontal;
+    justify-content: center;
+}
+
+.menuElement {
+    color: #8F8F8E;
+    padding-right: 25px;
+    padding-left: 25px;
+    font-size: small;
+    letter-spacing: 3.5px;
+}
+
+#all {
+    color: #444444;
+}
+
+#albumGrid {
+    margin-top: 75px;
+    display: grid;
+    grid-template-columns: 175px 175px 175px;
+    grid-gap: 30px;
+    justify-content: center;
+}
+
+.albumGridElement {
+    margin: 0;
+    width: 175px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.albumPhoto {
+    background-color: blue;
+    width: 150px;
+    height: 150px;
+}
+
+.socialsElement {
+    font-family: 'Gotham Narrow SSm A' , 'Gotham Narrow SSm B' , sans-serif;
+    text-transform: none;
+    color: #444444;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+}
+
+#socials {
+    margin-top: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#socialLinks {
+    display: flex;
+    flex-direction: horizontal;
+    justify-content: center;
+    gap: 10px;
+}
+
+.socialLinksElement {
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+}
