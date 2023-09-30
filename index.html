@@ -3,6 +3,7 @@
 
     <head>
         <link href="style.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <title>MaxNCheese</title>
@@ -10,8 +11,6 @@
     </head>
 
     <body style="width:100%;">
-
-        <div id = "mainLogo"></div>
 
         <div class = "menuDiv">
             <div class = "menuElementDiv" id = "leftMenu">
@@ -27,25 +26,75 @@
             </div>
         </div>
 
-        <script src='https://pictimecloudaf-m.azureedge.net/pictures/scripts/compiled/artgalleryembed.js'></script><iframe frameborder='0' id='pictimeIntegration' src='https://maxncheesephotography.pic-time.com/client?headless=true' style='width:100%;height:100%'></iframe>
+        <div id = "pageContent">
+
+            <div class = "page" id = "Home">
+                <p>Home</p>
+            </div>
+
+            <div class = "page" id = "About">
+                <p>About</p>
+            </div>
+
+            <div class = "page" id = "Portfolio">
+                <div id = "albumGrid">
+                    <div class = "albumGridElement">
+                        <div class = "albumPhoto"></div>
+                        <p>HeadShot Examples</p>
+                    </div>
+                    <div class = "albumGridElement">
+                        <div class = "albumPhoto"></div>
+                        <p>Album 1</p>
+                    </div>
+                    <div class = "albumGridElement">
+                        <div class = "albumPhoto"></div>
+                        <p>Album 1</p>
+                    </div>
+                    <div class = "albumGridElement">
+                        <div class = "albumPhoto"></div>
+                        <p>Album 1</p>
+                    </div>
+                    <div class = "albumGridElement">
+                        <div class = "albumPhoto"></div>
+                        <p>Album 1</p>
+                    </div>
+                    <div class = "albumGridElement">
+                        <div class = "albumPhoto"></div>
+                        <p>Album 1</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "page" id = "Book A Session">
+                <p>Book</p>
+            </div>
+
+            <div class = "page" id = "Testimonials">
+                <iframe id='pictimeIntegration' name='pictimeIntegration' src='https://maxncheesephotography.pic-time.com/testimonials?pictimeColumns=&cssurl=' style='width:100%;height:100%' onload="var script = document.createElement('script');  script.src = 'https://pictimecloudaf-m.azureedge.net/pictures/scripts/iframeresize.js'; parentElement.append(script);" frameborder='0' ></iframe>
+            </div>
+
+            <div class = "page" id = "Contact">
+                <div id = "companyInfo">
+                    <p id = "companyText">MAX N CHEESE PHOTOGRAPHY</p>
+                    <p id = "phone" class = "companyElement">Phone: 631-372-1752</p>
+                    <p id = "email" class = "companyElement">Email: mglamberg@gmail.com</p>
+                    <p id = "instagram" class = "companyElement">Instagram: @maxncheesephotography</p>
+                </div>
+            </div>
+
+        </div>
 
         <div id = "socials">
             <p class = "socialsElement">Photos by: Max N Cheese Photography</p>
             <div id = "socialLinks">
-                <div class = "socialLinksElement"></div>
-                <div class = "socialLinksElement"></div>
+                <div class = "socialLinksElement">
+                    <i class="fa fa-instagram" id = "instagram"></i>
+                </div>
+                <div class = "socialLinksElement">
+                    <i class="fa fa-envelope" id = "email"></i>
+                </div>
             </div>
         </div>
-        
-
-
-        <div id = "companyInfo">
-            <p id = "companyText">MAX N CHEESE PHOTOGRAPHY</p>
-            <p id = "phone" class = "companyElement">Phone: 631-372-1752</p>
-            <p id = "email" class = "companyElement">Email: mglamberg@gmail.com</p>
-            <p id = "instagram" class = "companyElement">Instagram: @maxncheesephotography</p>
-        </div>
-       
 
 	    <script src="script.js"></script>
     </body>

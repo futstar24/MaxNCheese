@@ -15,7 +15,6 @@ body {
 #companyInfo {
     margin: auto;
     font-size: small;
-    margin-top: 75px;
     font-family: 'Gotham Narrow SSm A' , 'Gotham Narrow SSm B' , sans-serif;
     text-transform: none;
     color: #444444;
@@ -107,11 +106,41 @@ body {
     display: flex;
     flex-direction: horizontal;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 .socialLinksElement {
-    width: 20px;
-    height: 20px;
-    background-color: blue;
+    font-size: 25px;;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+
+.page {
+    position: relative;
+    background-color: transparent;
+    margin: 0;
+    width: 100%;
+    grid-area: inner-div;
+}
+
+#pageContent {
+    display: grid;
+    place-items: top;
+    grid-template-areas: "inner-div";
 }
