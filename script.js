@@ -1,15 +1,32 @@
 
 Array.from(document.getElementsByClassName("albumGridElement")).forEach(albumGridElement => {
+    originalText = ""
+    albumText = ""
+    albumChildren = albumGridElement.children
+    photo = ""
+    Array.from(albumChildren).forEach(element => {
+        if (element.tagName == "P") {
+            originalText = element.innerHTML
+        } else {
+            photo = element
+        }
+    })
     albumGridElement.addEventListener("click", function() {
         albumChildren = albumGridElement.childNodes
-        text = ""
         albumChildren.forEach(element => {
             if (element.tagName == "P") {
-                text = element.innerHTML.toLowerCase().replace(/\s/g,"")
+                albumText = element.innerHTML.toLowerCase().replace(/\s/g,"")
             }
         })
-        window.open("https://maxncheesephotography.pic-time.com/-"+text+"/gallery","_blank")
+        window.open("https://maxncheesephotography.pic-time.com/-"+albumText+"/gallery","_blank")
     })
+    if (originalText == "Event Examples") {
+        photoName = 'albums/'+originalText+'/CoverPhoto.jpeg'
+        photo.style.background = `url("${photoName}") no-repeat`
+        photo.style.backgroundSize = "150px"
+    } else {
+        photo.style.background = "blue"
+    }
 })
 
 socials = document.getElementById("socials")

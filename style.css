@@ -82,9 +82,9 @@ body {
 }
 
 .albumPhoto {
-    background-color: blue;
     width: 150px;
     height: 150px;
+    background-size:contain;
 }
 
 .socialsElement {
