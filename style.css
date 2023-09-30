@@ -1,5 +1,9 @@
+html {
+    overflow-y:scroll;
+}
+
 body {
-    background-color: #edecea;
+    background-color: #d5d3d1;
     font-family: 'Gotham Narrow SSm A' , 'Gotham Narrow SSm B' , sans-serif;
     text-transform: uppercase;
     color: #444444;
@@ -54,6 +58,7 @@ body {
 
 #leftMenu {
     justify-content: right;
+    gap: 20px;
 }
 
 #rightMenu {
@@ -68,22 +73,25 @@ body {
 #albumGrid {
     margin-top: 75px;
     display: grid;
-    grid-template-columns: 175px 175px 175px;
+    grid-template-columns: 23vw 23vw 23vw;
     grid-gap: 30px;
     justify-content: center;
 }
 
 .albumGridElement {
     margin: 0;
-    width: 175px;
+    width: 23vw;
     display: flex;
     align-items: center;
     flex-direction: column;
+    letter-spacing: 3.5px;
+    font-size: 15px;
 }
 
 .albumPhoto {
-    width: 150px;
-    height: 150px;
+    margin-bottom: 10px;
+    width: 20vw;
+    height: 20vw;
     background-size:contain;
 }
 

@@ -1,4 +1,3 @@
-
 Array.from(document.getElementsByClassName("albumGridElement")).forEach(albumGridElement => {
     originalText = ""
     albumText = ""
@@ -20,10 +19,11 @@ Array.from(document.getElementsByClassName("albumGridElement")).forEach(albumGri
         })
         window.open("https://maxncheesephotography.pic-time.com/-"+albumText+"/gallery","_blank")
     })
-    if (originalText == "Event Examples") {
+    if (originalText != "Sports Examples") {
         photoName = 'albums/'+originalText+'/CoverPhoto.jpeg'
         photo.style.background = `url("${photoName}") no-repeat`
-        photo.style.backgroundSize = "150px"
+        photo.style.backgroundSize = "20vw"
+        photo.style.animation = "fadeIn 0.5s"
     } else {
         photo.style.background = "blue"
     }
@@ -52,7 +52,7 @@ Array.from(document.getElementsByClassName("menuElement")).forEach(menuElement =
         console.log("hi")
         text = menuElement.innerHTML
         menuElement.addEventListener("click", function() {
-            if (menuElement != shownMenuElement) {
+            if (menuElement != shownMenuElement && !switching) {
                 shownMenuElement.style.color = "#8F8F8E"
                 shownMenuElement = menuElement
                 shownMenuElement.style.color = "#444444"
@@ -62,8 +62,10 @@ Array.from(document.getElementsByClassName("menuElement")).forEach(menuElement =
     }
 })
 
+switching = false
 
 function showPage(pageDesc) {
+    switching = true
     removingPage = currentPage
     removingPage.style.animation = "fadeOut 0.5s"
     pages.forEach(page => {
@@ -76,5 +78,6 @@ function showPage(pageDesc) {
 
     setTimeout(function(){
         removingPage.parentElement.removeChild(removingPage)
+        switching = false
     }, "500")
 }
