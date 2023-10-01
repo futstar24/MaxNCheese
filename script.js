@@ -114,3 +114,48 @@ function showPage(pageDesc) {
         switching = false
     }, "500")
 }
+
+images = ["scrollImages/Aayan_Final Headshot_1_SCREEN.jpg","scrollImages/Edited_Prom_Photo_5.jpg","scrollImages/IMG_8967.JPG","scrollImages/VANESSA_Final Headshot_1_SCREEN.jpg","scrollImages/IMG_9379.jpg","scrollImages/Julia_Final Headshot_3.jpg","scrollImages/IMG_9529.jpg","scrollImages/Sofia_Final Headshot_SCREEN-2.jpg","scrollImages/IMG_9559.jpg"]
+
+index = 0
+
+leftArrow = document.getElementById("leftArrow")
+rightArrow = document.getElementById("rightArrow")
+
+placeImages()
+
+rightArrow.addEventListener("click",function(){
+    if (index == 0) {
+        index = images.length-1
+    } else {
+        index -= 1
+    }
+    placeImages()
+})
+
+leftArrow.addEventListener("click",function(){
+    if (index == images.length-1) {
+        index = 0
+    } else {
+        index += 1
+    }
+    placeImages()
+})
+
+function placeImages() {
+    left = 0
+    if (index-1 < 0) {
+        left = images.length-1
+    } else {
+        left = index-1
+    }
+    right = 0
+    if (index+1 == images.length) {
+        right = 0
+    } else {
+        right = index+1
+    }
+    document.getElementById("leftImage").src = images[left]
+    document.getElementById("centerImage").src = images[index]
+    document.getElementById("rightImage").src = images[right]
+}

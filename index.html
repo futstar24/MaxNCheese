@@ -11,9 +11,9 @@
     </head>
 
     <body style="width:100%;">
-
-        <div class = "menuDiv">
-            <div class = "menuElementDiv" id = "leftMenu">
+        <div id = "menu">
+            <div class = "menuElementDiv logo" id = "menuLogo"></div>
+            <div class = "menuDiv">
                 <p class = "menuElement" id = "home">Home</p>
                 <div class = "menuElement" id = "about">
                     <p class = "menuElement">About</p>
@@ -21,30 +21,39 @@
                     <p class = "subMenuElement">Cost</p>
                 </div>
                 <p class = "menuElement">Portfolio</p>
-            </div>
-            <div class = "menuElementDiv logo" id = "menuLogo"></div>
-            <div class = "menuElementDiv" id = "rightMenu">
                 <p class = "menuElement" id = "bookASession">Book A Session</p>
                 <p class = "menuElement">Testimonials</p>
                 <p class = "menuElement">Contact</p>
             </div>
         </div>
+        
 
         <div id = "pageContent">
 
             <div class = "page" id = "Home">
-                <p>Home</p>
+                <p class = "sectionTitle">WELCOME</p>
+                <div id = "homePhotoScroll">
+                    <div class = "hidePhoto">
+                        <img class = "scrollImage" id = "leftImage" src = "CouplesPhoto.jpeg">
+                        <div class = "blackLayer"></div>
+                        <i class="fa fa-arrow-left arrow fa-5x" id = "leftArrow"></i>
+                    </div>
+                    <img class = "scrollImage" id = "centerImage" src = "EventPhoto.jpeg">
+                    <div class = "hidePhoto">
+                        <img class = "scrollImage" id = "rightImage" src = "SportsPhoto.jpeg">
+                        <div class = "blackLayer"></div>
+                        <i class="fa fa-arrow-right arrow fa-5x" id = "rightArrow"></i>
+                    </div>
+                </div>
             </div>
 
             <div class = "page" id = "About">
                 <section id = "Photographer">
-                    <p class = "sectionTitle" id = "photographer">Photographer</p>
-                    <div class = "aboutDiv" id = "photographerDiv">
-                        <div class = "desc">
-                            <p class = "aboutTitle"><b>Max LAMBERG</b></p>
-                            <p class = "aboutDesc">**Description Goes Here**</p>
-                        </div>
-                        <div class = "aboutPhoto" id = "photographerPhoto"></div>   
+                    <p class = "sectionTitle" id = "photographer">PHOTOGRAPHER</p>
+                    <div id = "photographerDiv">
+                        <div id = "photographerPhoto"></div>
+                        <p class = "sectionTitle">MAX LAMBERG</p>
+                        <p id = "photographerBio">Hey there, I'm Max, and I love to take photos and capture special moments that will turn into lasting memories. I’m a young professional who has a lot of experience behind the lens and is constantly working to exceed expectations. I'm committed to helping you feel comfortable in front of the camera and create high-quality images that you will be thrilled with. I understand the importance of trust when it comes to choosing a photographer, and I promise to approach each project with professionalism, enthusiasm, and a passion for creating these unique moments for you. Thanks for stopping by my website. Check out my portfolio if you’d like and shoot me a message if you wanna chat about how I can help you capture all those moments that matter!</p>
                     </div>
                 </section>
                 <section id = "Cost">
@@ -87,6 +96,7 @@
             </div>
 
             <div class = "page" id = "Portfolio">
+                <p class = "sectionTitle">Portfolio</p>
                 <div id = "albumGrid">
                     <div class = "albumGridElement">
                         <div class = "albumPhoto"></div>
