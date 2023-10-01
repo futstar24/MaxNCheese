@@ -19,16 +19,49 @@ Array.from(document.getElementsByClassName("albumGridElement")).forEach(albumGri
         })
         window.open("https://maxncheesephotography.pic-time.com/-"+albumText+"/gallery","_blank")
     })
-    if (originalText != "Sports Examples") {
-        photoName = 'albums/'+originalText+'/CoverPhoto.jpeg'
-        photo.style.background = `url("${photoName}") no-repeat`
-        photo.style.backgroundSize = "20vw"
-        photo.style.animation = "fadeIn 0.5s"
-    } else {
-        photo.style.background = "blue"
-    }
+    photoName = 'albums/'+originalText+'/CoverPhoto.jpeg'
+    photo.style.background = `url("${photoName}") no-repeat`
+    photo.style.backgroundSize = "20vw"
+    photo.style.animation = "fadeIn 0.5s"
 })
 
+subMenuElements = []
+
+Array.from(document.getElementsByClassName("subMenuElement")).forEach(element => {
+    subMenuElements.push(element)
+    element.style.opacity = "0"
+    element.addEventListener("click",function() {
+        if (shownMenuElement != document.getElementById("about").children[0]) {
+            shownMenuElement.style.color = "#8F8F8E"
+            shownMenuElement = document.getElementById("about").children[0]
+            shownMenuElement.style.color = "#444444"
+            showPage("About")
+            document.getElementById(element.innerHTML).scrollIntoView({behavior: "smooth"})
+        } else {
+            document.getElementById(element.innerHTML).scrollIntoView({behavior: "smooth"})
+        }
+    })
+})
+
+
+
+about.addEventListener("mouseover", function() {
+    subMenuElements.forEach(element => {
+        element.style.opacity = "1"
+        element.style.animation = "fadeIn 0.5s"
+    })
+})
+
+about.addEventListener("mouseout",function(){
+    subMenuElements.forEach(element => {
+        element.style.opacity = "0"
+        element.style.animation = "fadeOut 0.5s"
+    })
+})
+
+document.body.addEventListener("click",function() {
+    console.log(document.querySelectorAll(":hover"))
+})
 socials = document.getElementById("socials")
 socials.parentElement.removeChild(socials)
 pages = []

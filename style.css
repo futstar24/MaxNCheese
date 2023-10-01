@@ -33,6 +33,8 @@ body {
 }
 
 .menuDiv {
+    position: absolute;
+    width: 100%;
     margin-top: 50px;
     display: grid;
     grid-template-columns: 33% 10% 33%;
@@ -70,7 +72,6 @@ body {
 #home {
     color: #444444;
 }
-
 
 #albumGrid {
     margin-top: 75px;
@@ -142,7 +143,6 @@ body {
 }
 
 .page {
-    position: relative;
     background-color: transparent;
     margin: 0;
     width: 100%;
@@ -150,7 +150,29 @@ body {
 }
 
 #pageContent {
+    position: absolute;
+    margin-top: 120px;
+    width: 100%;
     display: grid;
     place-items: top;
     grid-template-areas: "inner-div";
+}
+
+.calendar {
+    margin-top: 50px;
+}
+
+#calendar {
+    width: 500px;
+    height: 1000px;
+    box-shadow: 15px 15px #bcbcbc;
+}
+
+
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    z-index: 1;
 }
