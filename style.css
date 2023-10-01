@@ -4,11 +4,11 @@ html {
 
 body {
     background-color: #d4d3d3;
-    font-family: 'Gotham Narrow SSm A' , 'Gotham Narrow SSm B' , sans-serif;
-    text-transform: uppercase;
+    font-family: "Spectral";
     color: #444444;
     text-align: center;
     widtH: 100%;
+    letter-spacing: 1.15px;
 }
 
 #companyText {
@@ -20,7 +20,6 @@ body {
 #companyInfo {
     margin: auto;
     font-size: small;
-    font-family: 'Gotham Narrow SSm A' , 'Gotham Narrow SSm B' , sans-serif;
     text-transform: none;
     color: #444444;
     letter-spacing: 0.5px;
@@ -36,6 +35,7 @@ body {
     display: flex;
     flex-direction: horizontal;
     justify-content: center;
+    text-transform: uppercase;
 }
 
 #menu {
@@ -45,6 +45,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: "Georgia";
     gap: 20px;
 }
 
@@ -100,7 +101,6 @@ body {
 }
 
 .socialsElement {
-    font-family: 'Gotham Narrow SSm A' , 'Gotham Narrow SSm B' , sans-serif;
     text-transform: none;
     color: #444444;
     letter-spacing: 0.5px;
@@ -262,6 +262,8 @@ body {
 
 #photographerBio {
     max-width: 1000px;
+    margin-top: 10px;
+    font-size: large;
 }
 
 #photographerDesc {
@@ -274,7 +276,7 @@ body {
 #Cost {
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    gap: 50px;
 }
 
 #photographer {
@@ -286,6 +288,19 @@ body {
 .sectionTitle {
     font-size: xx-large;
     font-weight: bold;
+}
+
+#photographerName {
+    font-size: xx-large;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 0px;
+    font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', sans-serif;
+}
+
+#welcome {
+    font-size: 60px;
+    font-weight: bolder;
 }
 
 #homePhotoScroll {
@@ -330,16 +345,21 @@ body {
     flex-direction: column;
     justify-content: left;
     text-align: left;
-    gap: 20px;
+    gap: 0px;
     width: 50%;
     margin-left: 25%;
     font-size: large;
 }
 
+label {
+    font-size: large;
+}
+
 input {
     width: 100%;
-    font-size: xx-large;
+    font-size: large;
     padding: 3px;
+    margin-bottom: 20px;
 }
 
 #submit {
@@ -356,4 +376,38 @@ input {
     display: flex;
     flex-direction: horizontal;
     justify-content: center;
+}
+
+#contactInfo {
+    text-align: center;
+    font-size: medium;
+}
+
+#contactTitle {
+    font-size: xx-large;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+#contactSocials {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.contactSocialsElement {
+    width: 5vw;
+    height: 5vw;
+}
+
+#bigInsta {
+    background: url("instagram-icon.png") no-repeat;
+    background-size: cover;
+}
+
+#bigFB {
+    background: url("facebook-icon.png") no-repeat;
+    background-size: cover;
 }

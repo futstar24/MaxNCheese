@@ -31,7 +31,7 @@
         <div id = "pageContent">
 
             <div class = "page" id = "Home">
-                <p class = "sectionTitle">WELCOME</p>
+                <p id = "welcome">WELCOME</p>
                 <div id = "homePhotoScroll">
                     <div class = "hidePhoto">
                         <img class = "scrollImage" id = "leftImage" src = "CouplesPhoto.jpeg">
@@ -52,17 +52,17 @@
                     <p class = "sectionTitle" id = "photographer">PHOTOGRAPHER</p>
                     <div id = "photographerDiv">
                         <div id = "photographerPhoto"></div>
-                        <p class = "sectionTitle">MAX LAMBERG</p>
-                        <p id = "photographerBio">Hey there, I'm Max, and I love to take photos and capture special moments that will turn into lasting memories. I’m a young professional who has a lot of experience behind the lens and is constantly working to exceed expectations. I'm committed to helping you feel comfortable in front of the camera and create high-quality images that you will be thrilled with. I understand the importance of trust when it comes to choosing a photographer, and I promise to approach each project with professionalism, enthusiasm, and a passion for creating these unique moments for you. Thanks for stopping by my website. Check out my portfolio if you’d like and shoot me a message if you wanna chat about how I can help you capture all those moments that matter!</p>
+                        <p id = "photographerName">MAX LAMBERG</p>
+                        <p id = "photographerBio">Hey there, I'm Max, and I love to take photos and capture special moments that will turn into lasting memories. I’m a young professional who has a lot of experience behind the lens and is constantly working to exceed expectations. I'm committed to helping you feel comfortable in front of the camera and create high-quality images that you will be thrilled with. I understand the importance of trust when it comes to choosing a photographer, and I promise to approach each project with professionalism, enthusiasm, and a passion for creating these unique moments for you. Thanks for stopping by my website. Check out my portfolio if you’d like and shoot me a message if you want to chat about how I can help you capture all those moments that matter!</p>
                     </div>
                 </section>
                 <section id = "Cost">
-                    <p class = "sectionTitle" id = "cost">Cost</p>
+                    <p class = "sectionTitle" id = "cost">COST:</p>
                     <div class = "aboutDiv" id = "pricingDiv">
                         <div class = "aboutPhoto" id = "headshotPhoto"></div>
                         <div class = "desc">
                             <p class = "aboutTitle"><b>HEADSHOTS</b></p>
-                            <p class = "aboutTitle">$100</p>
+                            <p class = "aboutDesc">$100</p>
                             <p class = "aboutDesc">One hour, 100+ downloadable photos, 5 professionally retouched photos</p>
                         </div>
                     </div>
@@ -70,7 +70,7 @@
                         <div class = "aboutPhoto" id = "eventPhoto"></div>
                         <div class = "desc">
                             <p class = "aboutTitle"><b>EVENTS</b></p>
-                            <p class = "aboutTitle">$50 per hour</p>
+                            <p class = "aboutDesc">$50 per hour</p>
                             <p class = "aboutDesc">Includes 10 professionally retouched photos</p>
                         </div>
                     </div>
@@ -78,7 +78,7 @@
                         <div class = "aboutPhoto" id = "couplesPhoto"></div>
                         <div class = "desc">
                             <p class = "aboutTitle"><b>COUPLES</b></p>
-                            <p class = "aboutTitle">$100</p>
+                            <p class = "aboutDesc">$100</p>
                             <p class = "aboutDesc">One hour, 100+ downloadable photos, 10 professionally retouched photos</p>
                         </div>
                     </div>
@@ -86,7 +86,7 @@
                         <div class = "aboutPhoto" id = "sportsPhoto"></div>
                         <div class = "desc">
                             <p class = "aboutTitle"><b>SPORTS</b></p>
-                            <p class = "aboutTitle">$40 per hour</p>
+                            <p class = "aboutDesc">$40 per hour</p>
                             <p class = "aboutDesc">Includes 10 professionally retouched photos</p>
                         </div>
                     </div>
@@ -100,11 +100,11 @@
                 <div id = "albumGrid">
                     <div class = "albumGridElement">
                         <div class = "albumPhoto"></div>
-                        <p>HeadShot Examples</p>
+                        <p>Headshot Examples</p>
                     </div>
                     <div class = "albumGridElement">
                         <div class = "albumPhoto"></div>
-                        <p>Business HeadShot Examples</p>
+                        <p>Business Headshot Examples</p>
                     </div>
                     <div class = "albumGridElement">
                         <div class = "albumPhoto"></div>
@@ -134,12 +134,15 @@
             </div>
 
             <div class = "page" id = "Contact">
-                <p class = "sectionTitle">CONTACT ME</p>
+                <p id = "contactTitle">CONTACT ME</p>
                 <div id = "contactForm">
+                    <div id = "contactInfo">
+                        <p>Phone: 631-372-2322</p>
+                        <p>Email: mglamberg@gmail.com</p>
+                    </div>
                     <div id = "contactSocials">
-                        <div class = "contactSocialsElement" id = "bigInsta"></div>
-                        <div class = "contactSocialsElement" id = "bigFB"></div>
-                        <div class = "contactSocialsElement" id = "bigMail"></div>
+                        <a href = "https://www.instagram.com/maxncheesephotography" target = "_blank"><div class = "contactSocialsElement" id = "bigInsta"></div></a>
+                        <a href = "https://www.facebook.com/maxncheesephotography" target = "_blank"><div class = "contactSocialsElement" id = "bigFB"></div></a>
                     </div>
                     <label>Name: <input id = "nameInput"></input></label>
                     <label>Email: <input id = "emailInput"></input></label>
