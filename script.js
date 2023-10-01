@@ -210,3 +210,6 @@ function placeImages() {
     },450)
 }
 
+fetch("Testimonials/Description1.txt")
+  .then(response => response.text())
+  .then(text => console.log(text))
