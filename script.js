@@ -131,7 +131,9 @@ index = 0
 leftArrow = document.getElementById("leftArrow")
 rightArrow = document.getElementById("rightArrow")
 
-placeImages()
+document.getElementById("leftImage").src = images[images.length-1]
+document.getElementById("centerImage").src = images[0]
+document.getElementById("rightImage").src = images[1]
 
 leftArrow.addEventListener("click",function(){
     if (index == 0) {
@@ -139,6 +141,13 @@ leftArrow.addEventListener("click",function(){
     } else {
         index -= 1
     }
+    leftArrow.animate([
+        {transform: "scale(1.0)"},
+        {transform: "scale(0.8)"},
+        {transform: "scale(1.0)"},
+    ], {
+        duration: 400
+    })
     placeImages()
 })
 
@@ -148,6 +157,13 @@ rightArrow.addEventListener("click",function(){
     } else {
         index += 1
     }
+    rightArrow.animate([
+        {transform: "scale(1.0)"},
+        {transform: "scale(0.8)"},
+        {transform: "scale(1.0)"},
+    ], {
+        duration: 400
+    })
     placeImages()
 })
 
@@ -164,8 +180,33 @@ function placeImages() {
     } else {
         right = index+1
     }
-    document.getElementById("leftImage").src = images[left]
-    document.getElementById("centerImage").src = images[index]
-    document.getElementById("rightImage").src = images[right]
+
+    Array.from(document.getElementsByClassName("blackLayerSides")).forEach(element => {
+        element.animate([
+            {opacity: 0.7},
+            {opacity: 0.8},
+            {opacity: 1},
+            {opacity: 0.8},
+            {opacity: 0.7}
+        ], {
+            duration: 1000
+        })
+    })
+
+    document.getElementById("blackLayerCenter").animate([
+        {opacity: 0},
+        {opacity: 0.5},
+        {opacity: 1},
+        {opacity: 0.5},
+        {opacity: 0}
+    ], {
+        duration: 1000
+    })
+
+    setTimeout(function(){
+        document.getElementById("leftImage").src = images[left]
+        document.getElementById("centerImage").src = images[index]
+        document.getElementById("rightImage").src = images[right]
+    },450)
 }
 
