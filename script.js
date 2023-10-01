@@ -1,3 +1,12 @@
+
+document.getElementById("submit").addEventListener("click", function(){
+    text = "Name: "
+    text += document.getElementById("nameInput").value
+    text += "%0D%0D"
+    text+= document.getElementById("helpInput").value
+    window.open(`mailto:mglamberg@gmail.com?subject=Photography Assistance&body=${text}`);
+})
+
 Array.from(document.getElementsByClassName("albumGridElement")).forEach(albumGridElement => {
     originalText = ""
     albumText = ""
@@ -115,7 +124,7 @@ function showPage(pageDesc) {
     }, "500")
 }
 
-images = ["scrollImages/Aayan_Final Headshot_1_SCREEN.jpg","scrollImages/Edited_Prom_Photo_5.jpg","scrollImages/IMG_8967.JPG","scrollImages/VANESSA_Final Headshot_1_SCREEN.jpg","scrollImages/IMG_9379.jpg","scrollImages/Julia_Final Headshot_3.jpg","scrollImages/IMG_9529.jpg","scrollImages/Sofia_Final Headshot_SCREEN-2.jpg","scrollImages/IMG_9559.jpg"]
+images = ["scrollImages/Sofia_Final Headshot_SCREEN-2 2.jpg","scrollImages/IMG_9559 2.jpg","scrollImages/VANESSA_Final Headshot_1_SCREEN 2.jpg","scrollImages/IMG_9379 2.jpg","scrollImages/Ryan_FINAL HEADSHOT_2_SCREEN.jpg","scrollImages/IMG_8967 2.jpg","scrollImages/Julia_Final Headshot_3 2.jpg","scrollImages/IMG_7774 2.jpg","scrollImages/aayan 2.jpg","scrollImages/Edited_Prom_Photo_5 2.jpg"]
 
 index = 0
 
@@ -124,7 +133,7 @@ rightArrow = document.getElementById("rightArrow")
 
 placeImages()
 
-rightArrow.addEventListener("click",function(){
+leftArrow.addEventListener("click",function(){
     if (index == 0) {
         index = images.length-1
     } else {
@@ -133,7 +142,7 @@ rightArrow.addEventListener("click",function(){
     placeImages()
 })
 
-leftArrow.addEventListener("click",function(){
+rightArrow.addEventListener("click",function(){
     if (index == images.length-1) {
         index = 0
     } else {
@@ -159,3 +168,4 @@ function placeImages() {
     document.getElementById("centerImage").src = images[index]
     document.getElementById("rightImage").src = images[right]
 }
+

@@ -49,8 +49,8 @@ body {
 }
 
 #menuLogo {
-    width: 150px;
-    height: 50px;
+    width: 250px;
+    height: 87px;
     background: url('maxncheese.png') no-repeat;
     background-size:contain;
 }
@@ -59,7 +59,7 @@ body {
     color: #8F8F8E;
     padding-right: 10px;
     padding-left: 10px;
-    font-size: small;
+    font-size: medium;
     letter-spacing: 3.5px;
     z-index: 1;
 }
@@ -153,7 +153,7 @@ body {
 
 #pageContent {
     position: absolute;
-    margin-top: 140px;
+    margin-top: 170px;
     width: 100%;
     display: grid;
     place-items: top;
@@ -298,7 +298,7 @@ body {
 
 .scrollImage {
     height: 500px;
-    width: 31vw;
+    width: 28vw;
     object-fit: cover;
     grid-area: layer;
 }
@@ -323,4 +323,37 @@ body {
     color: white;
     z-index: 2;
     font-size: 50px;
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    text-align: left;
+    gap: 20px;
+    width: 50%;
+    margin-left: 25%;
+    font-size: large;
+}
+
+input {
+    width: 100%;
+    font-size: xx-large;
+    padding: 3px;
+}
+
+#submit {
+    width: 100px;
+    background-color: rgb(187, 184, 184);
+    text-align: center;
+    border-radius: 10px;
+    font-size: x-large;
+    padding: 10px;
+    margin-top: 40px;
+}
+
+#submitDiv {
+    display: flex;
+    flex-direction: horizontal;
+    justify-content: center;
 }
