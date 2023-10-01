@@ -92,10 +92,11 @@ body {
 }
 
 .albumPhoto {
-    margin-bottom: 10px;
+    margin-bottom: 2vw;
     width: 20vw;
     height: 20vw;
     background-size:contain;
+    box-shadow: 15px 15px #bcbcbc;
 }
 
 .socialsElement {
@@ -111,6 +112,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 #socialLinks {
@@ -175,4 +177,99 @@ body {
     align-items: center;
     width: 100px;
     z-index: 1;
+}
+
+.aboutDiv {
+    display: flex;
+    flex-direction: horizontal;
+    justify-content: center;
+    width: 100%;
+    height: 500px;
+    gap: 200px;
+
+}
+
+#pricingDiv {
+    text-align: left;
+}
+
+#photographerDiv {
+    text-align: right;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+#headshotPhoto {
+    width: 350px;
+    background: url("HeadShotsPhoto.jpeg") no-repeat;
+    background-size: cover;
+}
+
+#sportsPhoto {
+    width: 350px;
+    background: url("SportsPhoto.jpeg") no-repeat;
+    background-size: cover;
+}
+
+#couplesPhoto {
+    width: 350px;
+    background: url("CouplesPhoto.jpeg") no-repeat;
+    background-size: cover;
+}
+
+#miniHeadshotPhoto {
+    width: 350px;
+    background: url("MiniHeadshotPhoto.jpeg") no-repeat;
+    background-size: cover;
+}
+
+#eventPhoto {
+    width: 350px;
+    background: url("EventPhoto.jpeg") no-repeat;
+    background-size: cover;
+    
+}
+
+#photographerPhoto {
+    width: 750px;
+    background: url("PhotographerPhoto.jpeg") no-repeat;
+    background-size: contain;
+    
+}
+
+.aboutPhoto {
+    box-shadow: 15px 15px #bcbcbc;
+}
+
+.aboutTitle {
+    font-size: xx-large;
+}
+
+.aboutDesc {
+    font-size: larger;
+    max-width: 500px;
+}
+
+.desc {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    width: 25%;
+}
+
+#Cost {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+#photographer {
+    margin-top: 100px;
+}
+
+
+.sectionTitle {
+    font-size: xx-large;
+    font-weight: bold;
 }
