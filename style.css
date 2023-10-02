@@ -11,6 +11,8 @@ body {
     letter-spacing: 1.15px;
 }
 
+
+
 #companyText {
     font-size: large;
     letter-spacing: 3.5px;
@@ -445,11 +447,62 @@ input {
     box-shadow: 1vw 1vw #bcbcbc;
 }
 
+
+.testimonialDesc {
+    font-size: medium;
+}
+
 .testimonialName {
-    font-size: 1.5vw;
+    font-size: large;
     font-weight: bolder;
 }
 
-.testimonialDesc {
-    font-size: 1vw;
+@media only screen and (max-width: 750px) {
+    .menuDiv {
+        opacity: 0;
+    }
+
+    .testimonialDiv {
+        flex-basis: 100%;
+    }
+
+    #eventPhoto {
+        width: 175px;
+        height: 262.5px;
+    }
+
+    #headshotPhoto {
+        width: 175px;
+        height: 262.5px;
+    }
+
+    #couplesPhoto {
+        width: 175px;
+        height: 262.5px;
+    }
+
+    #sportsPhoto {
+        width: 175px;
+        height: 262.5px;
+    }
+
+    .aboutDiv {
+        height: 262.5px;
+    }
+
+    .aboutTitle {
+        font-size: 20px;
+    }
+
+    .aboutDesc {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+
+    #eventPhoto {
+        width: 175px;
+        height: 262.5px;
+    }
 }
