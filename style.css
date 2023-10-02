@@ -418,3 +418,27 @@ input {
     background: url("facebook-icon.png") no-repeat;
     background-size: cover;
 }
+
+#testimonialGrid {
+    margin-top: 50px;
+    margin-left: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    gap: 10%;
+    row-gap: 50px;
+    align-items: center;
+}
+
+.testimonialDiv {
+    flex-basis: 40%;
+    background-color: white;
+    padding: 10px;
+    box-shadow: 15px 15px #bcbcbc;
+}
+
+.testimonialName {
+    font-size: large;
+    font-weight: bolder;
+}

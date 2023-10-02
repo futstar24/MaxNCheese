@@ -1,3 +1,36 @@
+function setTestimonials() {
+    testimonialText=""
+    fetch("Testimonials/testimonials.txt")
+    .then(response => response.text())
+    .then(text => {
+        testimonialList = text.split("\n")
+        testimonialCount = testimonialList.length
+    })
+}
+
+testimonialCount = 0
+testimonialList = []
+testimonialGrid = document.getElementById("testimonialGrid")
+
+setTestimonials()
+
+setTimeout(function() {
+    for(i=0;i<testimonialCount;i+=2) {
+        testimonial = document.createElement("div")
+        testimonial.classList.add("testimonialDiv")
+        nameElement = document.createElement("p")
+        nameElement.classList.add("testimonialName")
+        nameElement.innerHTML = testimonialList[i]
+        descElement = document.createElement("p")
+        descElement.classList.add("testimonialDesc")
+        descElement.innerHTML = testimonialList[i+1]
+        testimonial.appendChild(nameElement)
+        testimonial.appendChild(descElement)
+        console.log(testimonial)
+        console.log("added")
+        testimonialGrid.appendChild(testimonial)
+    }
+},1000)
 
 document.getElementById("submit").addEventListener("click", function(){
     text = "Name: "
@@ -210,6 +243,3 @@ function placeImages() {
     },450)
 }
 
-fetch("Testimonials/Description1.txt")
-  .then(response => response.text())
-  .then(text => console.log(text))
