@@ -61,10 +61,13 @@ body {
 .menuElement {
     color: #8F8F8E;
     padding-right: 10px;
-    padding-left: 10px;
     font-size: medium;
     letter-spacing: 3.5px;
     z-index: 1;
+}
+
+.barMenu {
+    padding-left: 10px;
 }
 
 .menuElementDiv {
@@ -457,10 +460,38 @@ input {
     font-weight: bolder;
 }
 
+#listMenu {
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    text-align: left;
+    padding: 10px;
+    border-color: black;
+    border-width: 5px;
+    border-style: none;
+}
+
+#menuIcon {
+    font-size: 25px;
+}
+
+#listAbout {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.listAboutElement {
+    margin: 0;
+    margin-top: 10px;
+    padding-left: 25px;
+}
+
+#listItemAbout {
+    margin: 0;
+}
+
 @media only screen and (max-width: 750px) {
-    .menuDiv {
-        opacity: 0;
-    }
 
     .testimonialDiv {
         flex-basis: 100%;

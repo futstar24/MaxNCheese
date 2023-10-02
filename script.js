@@ -1,4 +1,96 @@
+listMenu = document.getElementById("listMenu")
 
+listMenuIcon = document.getElementById("menuIcon")
+
+listMenuElements = document.getElementById("listMenuElements")
+
+listAbout = document.getElementById("listAbout")
+
+showingListMenu = false
+
+listAboutElements = []
+
+shownListMenuElement = document.getElementById("listHome")
+
+listSubMenuElements = []
+
+Array.from(document.getElementsByClassName("listAboutElement")).forEach(element => {
+    listSubMenuElements.push(element)
+    console.log("here")
+    element.addEventListener("click",function() {
+        if (shownListMenuElement != document.getElementById("listItemAbout")) {
+            shownListMenuElement.style.color = "#8F8F8E"
+            shownListMenuElement = document.getElementById("listItemAbout")
+            shownListMenuElement.style.color = "#444444"
+            showPage("About")
+            document.getElementById(element.innerHTML).scrollIntoView({behavior: "smooth"})
+        } else {
+            document.getElementById(element.innerHTML).scrollIntoView({behavior: "smooth"})
+        }
+    })
+})
+
+document.body.addEventListener("click", function(){
+    console.log(document.querySelectorAll(":hover"))
+})
+
+listMenu.addEventListener("mouseout",function(){
+    if (!Array.from(document.querySelectorAll(":hover")).includes(listMenu) && showingListMenu) {
+        showingListMenu = false
+        listMenu.style.borderStyle = "none"
+        listMenuElements.parentElement.removeChild(listMenuElements)
+        listMenu.style.backgroundColor = "transparent"
+    }
+})
+
+
+Array.from(document.getElementsByClassName("listAboutElement")).forEach(element => {
+    listAboutElements.push(element)
+    element.parentElement.removeChild(element)
+})
+
+listAbout.addEventListener("mouseover", function() {
+    listAboutElements.forEach(element => {
+        listAbout.appendChild(element)
+    })
+})
+
+listAbout.addEventListener("mouseout",function(){
+    listAboutElements.forEach(element => {
+       if (!Array.from(document.querySelectorAll(":hover")).includes(element)) {
+        element.parentElement.removeChild(element)
+       }
+    })
+})
+
+
+Array.from(document.getElementsByClassName("listMenu")).forEach(menuElement => {
+    text = menuElement.innerHTML
+    menuElement.addEventListener("click", function() {
+        if (menuElement != shownListMenuElement && !switching) {
+            shownListMenuElement.style.color = "#8F8F8E"
+            shownListMenuElement = menuElement
+            shownListMenuElement.style.color = "#444444"
+            showPage(shownListMenuElement.innerHTML)
+        }
+    })
+})
+
+listMenuElements.parentElement.removeChild(listMenuElements)
+
+listMenuIcon.addEventListener("click",function() {
+    if (showingListMenu) {
+        showingListMenu = false
+        listMenu.style.borderStyle = "none"
+        listMenuElements.parentElement.removeChild(listMenuElements)
+        listMenu.style.backgroundColor = "transparent"
+    } else {
+        showingListMenu = true
+        listMenu.appendChild(listMenuElements)
+        listMenu.style.borderStyle = "solid"
+        listMenu.style.backgroundColor = "#bcbcbc"
+    }
+})
 
 function setTestimonials() {
     testimonialText=""
@@ -89,7 +181,6 @@ Array.from(document.getElementsByClassName("subMenuElement")).forEach(element =>
 })
 
 
-
 about.addEventListener("mouseover", function() {
     subMenuElements.forEach(element => {
         element.style.opacity = "1"
@@ -104,9 +195,41 @@ about.addEventListener("mouseout",function(){
     })
 })
 
-document.body.addEventListener("click",function() {
-    console.log(document.querySelectorAll(":hover"))
+menu = document.getElementById("menuDiv")
+
+menuElements = []
+Array.from(document.getElementsByClassName("barMenu")).forEach(element => {
+    if (element.innerHTML != "About") {
+        menuElements.push(element)
+    }
 })
+
+showingMenu = true
+
+window.onresize = function(){
+    hideShowMenu()
+}
+
+hideShowMenu()
+
+function hideShowMenu() {
+    console.log("running")
+    if (window.innerWidth < 750 && showingMenu) {
+        console.log("bye")
+        showingMenu = false
+        menuElements.forEach(element => {
+            console.log("removed")
+            element.parentElement.removeChild(element)
+        })
+    } else if (window.innerWidth > 750 && !showingMenu) {
+        console.log("hi")
+        showingMenu = true
+        menuElements.forEach(element => {
+            menu.appendChild(element)
+        })
+    }
+}
+
 socials = document.getElementById("socials")
 socials.parentElement.removeChild(socials)
 pages = []
@@ -125,7 +248,7 @@ document.getElementById("pageContent").appendChild(currentPage)
 
 shownMenuElement = document.getElementById("home")
 
-Array.from(document.getElementsByClassName("menuElement")).forEach(menuElement => {
+Array.from(document.getElementsByClassName("barMenu")).forEach(menuElement => {
     if (menuElement.tagName == "P") {
         console.log("hi")
         text = menuElement.innerHTML
@@ -247,4 +370,3 @@ function placeImages() {
         document.getElementById("centerImage").src = images[index]
     },700)
 }
-
