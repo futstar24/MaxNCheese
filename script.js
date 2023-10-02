@@ -1,3 +1,5 @@
+
+
 function setTestimonials() {
     testimonialText=""
     fetch("Testimonials/testimonials.txt")
@@ -223,7 +225,7 @@ function placeImages() {
             {opacity: 0.8},
             {opacity: 0.7}
         ], {
-            duration: 1000
+            duration: 1500
         })
     })
 
@@ -234,13 +236,15 @@ function placeImages() {
         {opacity: 0.5},
         {opacity: 0}
     ], {
-        duration: 1000
+        duration: 1500
     })
 
     setTimeout(function(){
         document.getElementById("leftImage").src = images[left]
-        document.getElementById("centerImage").src = images[index]
         document.getElementById("rightImage").src = images[right]
-    },450)
+    },600)
+    setTimeout(function(){
+        document.getElementById("centerImage").src = images[index]
+    },700)
 }
 

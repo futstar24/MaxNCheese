@@ -183,56 +183,60 @@ body {
     flex-direction: horizontal;
     justify-content: center;
     width: 100%;
-    height: 500px;
+    height: 37.5vw;
 }
 
 #pricingDiv {
     text-align: left;
-    gap: 200px;
+    gap: 15vw;
 }
 
 #photographerDiv {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 25px;
     margin-bottom: 50px;
 }
 
 #headshotPhoto {
-    width: 350px;
+    width: 25vw;
+    height: 37.5vw;
     background: url("HeadShotsPhoto.jpeg") no-repeat;
-    background-size: cover;
+    background-size: contain;
 }
 
 #sportsPhoto {
-    width: 350px;
+    width: 25vw;
+    height: 37.5vw;
     background: url("SportsPhoto.jpeg") no-repeat;
     background-size: cover;
 }
 
 #couplesPhoto {
-    width: 350px;
+    width: 25vw;
+    height: 37.5vw;
     background: url("CouplesPhoto.jpeg") no-repeat;
     background-size: cover;
 }
 
 #miniHeadshotPhoto {
-    width: 350px;
+    width: 25vw;
+    height: 37.5vw;
     background: url("MiniHeadshotPhoto.jpeg") no-repeat;
     background-size: cover;
 }
 
 #eventPhoto {
-    width: 350px;
+    width: 25vw;
+    height: 37.5vw;
     background: url("EventPhoto.jpeg") no-repeat;
     background-size: cover;
     
 }
 
 #photographerPhoto {
-    width: 600px;
-    height: 400px;
+    width: 50vw;
+    height: 33vw;
     background: url("PhotographerPhoto.jpeg") no-repeat;
     background-size: cover;
     box-shadow: 15px 15px #bcbcbc;
@@ -244,12 +248,14 @@ body {
 }
 
 .aboutTitle {
-    font-size: xx-large;
+    font-size: 3vw;
+    margin: 0;
 }
 
 .aboutDesc {
-    font-size: larger;
-    max-width: 500px;
+    font-size: 1.5vw;
+    max-width: 40vw;
+    margin: 0;
 }
 
 .desc {
@@ -257,11 +263,12 @@ body {
     flex-direction: column;
     height: 100%;
     justify-content: center;
+    row-gap: 5vw;
     width: 25%;
 }
 
 #photographerBio {
-    max-width: 1000px;
+    max-width: 75vw;
     margin-top: 10px;
     font-size: large;
 }
@@ -312,9 +319,9 @@ body {
 }
 
 .scrollImage {
-    height: 500px;
-    width: 28vw;
-    object-fit: cover;
+    height: 31.25vw;
+    width: 25vw;
+    object-fit: contain;
     grid-area: layer;
 }
 
@@ -421,13 +428,13 @@ input {
 
 #testimonialGrid {
     margin-top: 50px;
-    margin-left: 10%;
+    margin-left: 5%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 80%;
-    gap: 10%;
-    row-gap: 50px;
+    width: 90%;
+    gap: 7vw;
+    row-gap: 7vw;
     align-items: center;
 }
 
@@ -435,10 +442,14 @@ input {
     flex-basis: 40%;
     background-color: white;
     padding: 10px;
-    box-shadow: 15px 15px #bcbcbc;
+    box-shadow: 1vw 1vw #bcbcbc;
 }
 
 .testimonialName {
-    font-size: large;
+    font-size: 1.5vw;
     font-weight: bolder;
+}
+
+.testimonialDesc {
+    font-size: 1vw;
 }
