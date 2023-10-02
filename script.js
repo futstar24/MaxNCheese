@@ -5,7 +5,7 @@ function setTestimonials() {
     .then(text => {
         testimonialList = text.split("\n")
         testimonialCount = testimonialList.length
-        testimonialCount-=1
+        testimonialCount -= 1
     })
 }
 
