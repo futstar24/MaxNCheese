@@ -32,20 +32,28 @@
 
             <div class = "page" id = "Home">
                 <p id = "welcome">WELCOME</p>
-                <div id = "homePhotoScroll">
-                    <div class = "hidePhoto">
-                        <img class = "scrollImage" id = "leftImage" src = "CouplesPhoto.jpeg">
-                        <div class = "blackLayer blackLayerSides"></div>
-                        <i class="fa fa-arrow-left arrow fa-5x" id = "leftArrow"></i>
+                <div id = "photoOptions">
+                    <div id = "homePhotoScroll">
+                        <div class = "hidePhoto">
+                            <img class = "scrollImage" id = "leftImage" src = "CouplesPhoto.jpeg">
+                            <div class = "blackLayer blackLayerSides"></div>
+                            <i class="fa fa-arrow-left arrow" id = "leftArrow"></i>
+                        </div>
+                        <div class = "hidePhoto">
+                            <img class = "scrollImage" id = "centerImage" src = "EventPhoto.jpeg">
+                            <div class = "blackLayer" id = "blackLayerCenter"></div>
+                        </div>
+                        <div class = "hidePhoto">
+                            <img class = "scrollImage" id = "rightImage" src = "SportsPhoto.jpeg">
+                            <div class = "blackLayer blackLayerSides"></div>
+                            <i class="fa fa-arrow-right arrow" id = "rightArrow"></i>
+                        </div>
                     </div>
-                    <div class = "hidePhoto">
-                        <img class = "scrollImage" id = "centerImage" src = "EventPhoto.jpeg">
-                        <div class = "blackLayer" id = "blackLayerCenter"></div>
-                    </div>
-                    <div class = "hidePhoto">
-                        <img class = "scrollImage" id = "rightImage" src = "SportsPhoto.jpeg">
-                        <div class = "blackLayer blackLayerSides"></div>
-                        <i class="fa fa-arrow-right arrow fa-5x" id = "rightArrow"></i>
+                    <div id = "homePhoto">
+                        <div class = "hidePhoto">
+                            <img id = "homeImage" src = "EventPhoto.jpeg">
+                            <div class = "blackLayer" id = "blackLayerHome"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -129,6 +137,7 @@
             </div>
 
             <div class = "page" id = "Book A Session">
+                <p class = "sectionTitle">Book</p>
                 <div class="calendar" data-url="https://calendly.com/mglamberg/headshots-with-max-lamberg-1" data-processed="true"><iframe id = "calendar" src="https://calendly.com/mglamberg/headshots-with-max-lamberg-1?month=2023-10&amp;embed_type=Inline"></iframe></div>
             </div>
 
@@ -171,20 +180,18 @@
             </div>
         </div>
 
+        <i class="fa fa-bars" id = "menuIcon"></i>
         <div id = "listMenu">
-            <i class="fa fa-bars" id = "menuIcon"></i>
-            <div id = "listMenuElements">
-                <p class = "menuElement listMenu" id = "listHome">Home</p>
-                <div class = "menuElement" id = "listAbout">
-                    <p class = "menuElement listMenu" id = "listItemAbout">About</p>
-                    <p class = "listAboutElement">Photographer</p>
-                    <p class = "listAboutElement">Cost</p>
-                </div>
-                <p class = "menuElement listMenu">Portfolio</p>
-                <p class = "menuElement listMenu">Book A Session</p>
-                <p class = "menuElement listMenu">Testimonials</p>
-                <p class = "menuElement listMenu">Contact</p>
+            <b><p class = "menuElement listMenuElement" id = "listHome">Home</p></b>
+            <div class = "menuElement listMenuElement" id = "listAbout">
+                <b><p class = "menuElement listMenuElement" id = "listItemAbout">About</p></b>
+                <b><p class = "listAboutElement">Photographer</p></b>
+                <b><p class = "listAboutElement" id = "listCost">Cost</p></b>
             </div>
+            <b><p class = "menuElement listMenuElement">Portfolio</p></b>
+            <b><p class = "menuElement listMenuElement">Book A Session</p></b>
+            <b><p class = "menuElement listMenuElement">Testimonials</p></b>
+            <b><p class = "menuElement listMenuElement">Contact</p></b>
         </div>
 
 	    <script src="script.js"></script>

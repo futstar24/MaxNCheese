@@ -1,10 +1,47 @@
 listMenu = document.getElementById("listMenu")
 
+
 listMenuIcon = document.getElementById("menuIcon")
 
-listMenuElements = document.getElementById("listMenuElements")
+listHomeLabel = document.getElementById("listHome")
+
+homeLabel = document.getElementById("home")
+
+shownMenuElement = document.getElementById("home")
 
 listAbout = document.getElementById("listAbout")
+
+images = ["scrollImages/Sofia_Final Headshot_SCREEN-2 2.jpg","scrollImages/IMG_9559 2.jpg","scrollImages/VANESSA_Final Headshot_1_SCREEN 2.jpg","scrollImages/IMG_9379 2.jpg","scrollImages/Ryan_FINAL HEADSHOT_2_SCREEN.jpg","scrollImages/IMG_8967 2.jpg","scrollImages/Julia_Final Headshot_3 2.jpg","scrollImages/IMG_7774 2.jpg","scrollImages/aayan 2.jpg","scrollImages/Edited_Prom_Photo_5 2.jpg"]
+
+index = 0
+
+
+listMenuElements = []
+Array.from(document.getElementsByClassName("listMenuElement")).forEach(element => {
+    if (element.id != "listAbout") {
+        listMenuElements.push(element)
+    }
+})
+
+menuElements = []
+Array.from(document.getElementsByClassName("barMenu")).forEach(element => {
+    if (element.innerHTML != "About") {
+        menuElements.push(element)
+    }
+})
+
+leftImage = document.getElementById("leftImage")
+rightImage = document.getElementById("rightImage")
+centerImage = document.getElementById("centerImage")
+homeImage = document.getElementById("homeImage")
+
+leftArrow = document.getElementById("leftArrow")
+
+rightArrow = document.getElementById("rightArrow")
+
+leftArrow.addEventListener("click",shiftImagesLeft)
+
+rightArrow.addEventListener("click",shiftImagesRight)
 
 showingListMenu = false
 
@@ -12,7 +49,24 @@ listAboutElements = []
 
 shownListMenuElement = document.getElementById("listHome")
 
+shownListMenuElement.style.color = "#444444"
+
+homePhoto = document.getElementById("homePhoto")
+
+homePhotoScroll = document.getElementById("homePhotoScroll")
+
 listSubMenuElements = []
+
+
+photoOptions = document.getElementById("photoOptions")
+
+document.getElementById("leftImage").src = images[images.length-1]
+document.getElementById("centerImage").src = images[0]
+document.getElementById("rightImage").src = images[1]
+
+document.getElementById("homeImage").src = images[0]
+
+homePhoto.parentElement.removeChild(homePhoto)
 
 Array.from(document.getElementsByClassName("listAboutElement")).forEach(element => {
     listSubMenuElements.push(element)
@@ -23,8 +77,20 @@ Array.from(document.getElementsByClassName("listAboutElement")).forEach(element 
             shownListMenuElement = document.getElementById("listItemAbout")
             shownListMenuElement.style.color = "#444444"
             showPage("About")
+            listMenu.style.animation = "fadeOut 0.5s"
+            setTimeout(function(){
+                showingListMenu = false
+                listMenu.parentElement.removeChild(listMenu)
+            }, 500)
+            document.body.style.overflow = "scroll"
             document.getElementById(element.innerHTML).scrollIntoView({behavior: "smooth"})
         } else {
+            listMenu.style.animation = "fadeOut 0.5s"
+            setTimeout(function(){
+                showingListMenu = false
+                listMenu.parentElement.removeChild(listMenu)
+            }, 500)
+            document.body.style.overflow = "scroll"
             document.getElementById(element.innerHTML).scrollIntoView({behavior: "smooth"})
         }
     })
@@ -34,14 +100,6 @@ document.body.addEventListener("click", function(){
     console.log(document.querySelectorAll(":hover"))
 })
 
-listMenu.addEventListener("mouseout",function(){
-    if (!Array.from(document.querySelectorAll(":hover")).includes(listMenu) && showingListMenu) {
-        showingListMenu = false
-        listMenu.style.borderStyle = "none"
-        listMenuElements.parentElement.removeChild(listMenuElements)
-        listMenu.style.backgroundColor = "transparent"
-    }
-})
 
 
 Array.from(document.getElementsByClassName("listAboutElement")).forEach(element => {
@@ -64,31 +122,50 @@ listAbout.addEventListener("mouseout",function(){
 })
 
 
-Array.from(document.getElementsByClassName("listMenu")).forEach(menuElement => {
-    text = menuElement.innerHTML
-    menuElement.addEventListener("click", function() {
-        if (menuElement != shownListMenuElement && !switching) {
-            shownListMenuElement.style.color = "#8F8F8E"
-            shownListMenuElement = menuElement
-            shownListMenuElement.style.color = "#444444"
-            showPage(shownListMenuElement.innerHTML)
-        }
-    })
+Array.from(document.getElementsByClassName("listMenuElement")).forEach(menuElement => {
+    if (menuElement.id != "listAbout") {
+        text = menuElement.innerHTML
+        menuElement.addEventListener("click", function() {
+            if (menuElement != shownListMenuElement && !switching) {
+                console.log("here by mistake")
+                shownListMenuElement.style.color = "#8F8F8E"
+                shownListMenuElement = menuElement
+                shownListMenuElement.style.color = "#444444"
+                showPage(shownListMenuElement.innerHTML)
+                listMenu.style.animation = "fadeOut 0.5s"
+                setTimeout(function(){
+                    showingListMenu = false
+                    listMenu.parentElement.removeChild(listMenu)
+                }, 500)
+                document.body.style.overflow = "scroll"
+            } else if (!switching) {
+                listMenu.style.animation = "fadeOut 0.5s"
+                setTimeout(function(){
+                    showingListMenu = false
+                    listMenu.parentElement.removeChild(listMenu)
+                }, 500)
+                document.body.style.overflow = "scroll"
+            }
+        })
+    }
 })
 
-listMenuElements.parentElement.removeChild(listMenuElements)
+listMenu.parentElement.removeChild(listMenu)
+document.body.style.overflow = "scroll"
 
 listMenuIcon.addEventListener("click",function() {
     if (showingListMenu) {
         showingListMenu = false
-        listMenu.style.borderStyle = "none"
-        listMenuElements.parentElement.removeChild(listMenuElements)
-        listMenu.style.backgroundColor = "transparent"
+        listMenu.style.animation = "fadeOut 0.5s"
+        setTimeout(function(){
+            listMenu.parentElement.removeChild(listMenu)
+        }, 500)
+        document.body.style.overflow = "visible"
     } else {
         showingListMenu = true
-        listMenu.appendChild(listMenuElements)
-        listMenu.style.borderStyle = "solid"
-        listMenu.style.backgroundColor = "#bcbcbc"
+        document.body.appendChild(listMenu)
+        document.body.style.overflow = "hidden"
+        listMenu.style.animation = "fadeIn 0.5s"
     }
 })
 
@@ -158,7 +235,7 @@ Array.from(document.getElementsByClassName("albumGridElement")).forEach(albumGri
     })
     photoName = 'albums/'+originalText+'/CoverPhoto.jpeg'
     photo.style.background = `url("${photoName}") no-repeat`
-    photo.style.backgroundSize = "20vw"
+    photo.style.backgroundSize = "contain"
     photo.style.animation = "fadeIn 0.5s"
 })
 
@@ -197,12 +274,8 @@ about.addEventListener("mouseout",function(){
 
 menu = document.getElementById("menuDiv")
 
-menuElements = []
-Array.from(document.getElementsByClassName("barMenu")).forEach(element => {
-    if (element.innerHTML != "About") {
-        menuElements.push(element)
-    }
-})
+
+
 
 showingMenu = true
 
@@ -210,7 +283,11 @@ window.onresize = function(){
     hideShowMenu()
 }
 
+
+listMenuIcon.parentElement.removeChild(listMenuIcon)
+
 hideShowMenu()
+
 
 function hideShowMenu() {
     console.log("running")
@@ -221,13 +298,41 @@ function hideShowMenu() {
             console.log("removed")
             element.parentElement.removeChild(element)
         })
+        document.body.appendChild(listMenuIcon)
+        shownListMenuElement.style.color = "#8F8F8E"
+        text = shownMenuElement.innerHTML
+        listMenuElements.forEach(element => {
+            if (element.innerHTML == text) {
+                shownListMenuElement = element
+            }
+        })
+        listHomeLabel.style.color = "#8F8F8E"
+        shownListMenuElement.style.color = "#444444"
+        homePhotoScroll.parentElement.removeChild(homePhotoScroll)
+        photoOptions.appendChild(homePhoto)
     } else if (window.innerWidth > 750 && !showingMenu) {
         console.log("hi")
         showingMenu = true
         menuElements.forEach(element => {
             menu.appendChild(element)
         })
+        listMenuIcon.parentElement.removeChild(listMenuIcon)
+        text = shownListMenuElement.innerHTML
+        homeLabel.style.color = "#8F8F8E"
+        shownMenuElement.style.color = "#8F8F8E"
+        menuElements.forEach(element => {
+            if (element.innerHTML == text) {
+                shownMenuElement = element
+                shownMenuElement.style.color = "#444444"
+            } else if (element.id == "about" && text == "About") {
+                shownMenuElement = element
+                shownMenuElement.children[0].style.color = "#444444"
+            }
+        })
+        homePhoto.parentElement.removeChild(homePhoto)
+        photoOptions.appendChild(homePhotoScroll)
     }
+
 }
 
 socials = document.getElementById("socials")
@@ -246,7 +351,6 @@ currentPage = pages[0]
 
 document.getElementById("pageContent").appendChild(currentPage)
 
-shownMenuElement = document.getElementById("home")
 
 Array.from(document.getElementsByClassName("barMenu")).forEach(menuElement => {
     if (menuElement.tagName == "P") {
@@ -255,6 +359,9 @@ Array.from(document.getElementsByClassName("barMenu")).forEach(menuElement => {
         menuElement.addEventListener("click", function() {
             if (menuElement != shownMenuElement && !switching) {
                 shownMenuElement.style.color = "#8F8F8E"
+                if (shownMenuElement.id == "about") {
+                    shownMenuElement.children[0].style.color = "#8F8F8E"
+                }
                 shownMenuElement = menuElement
                 shownMenuElement.style.color = "#444444"
                 showPage(shownMenuElement.innerHTML)
@@ -283,18 +390,7 @@ function showPage(pageDesc) {
     }, "500")
 }
 
-images = ["scrollImages/Sofia_Final Headshot_SCREEN-2 2.jpg","scrollImages/IMG_9559 2.jpg","scrollImages/VANESSA_Final Headshot_1_SCREEN 2.jpg","scrollImages/IMG_9379 2.jpg","scrollImages/Ryan_FINAL HEADSHOT_2_SCREEN.jpg","scrollImages/IMG_8967 2.jpg","scrollImages/Julia_Final Headshot_3 2.jpg","scrollImages/IMG_7774 2.jpg","scrollImages/aayan 2.jpg","scrollImages/Edited_Prom_Photo_5 2.jpg"]
-
-index = 0
-
-leftArrow = document.getElementById("leftArrow")
-rightArrow = document.getElementById("rightArrow")
-
-document.getElementById("leftImage").src = images[images.length-1]
-document.getElementById("centerImage").src = images[0]
-document.getElementById("rightImage").src = images[1]
-
-leftArrow.addEventListener("click",function(){
+function shiftImagesLeft() {
     if (index == 0) {
         index = images.length-1
     } else {
@@ -308,15 +404,15 @@ leftArrow.addEventListener("click",function(){
         duration: 400
     })
     placeImages()
-})
+}
 
-rightArrow.addEventListener("click",function(){
-    if (index == images.length-1) {
-        index = 0
+function shiftImagesRight() {
+    if (index == 0) {
+        index = images.length-1
     } else {
-        index += 1
+        index -= 1
     }
-    rightArrow.animate([
+    leftArrow.animate([
         {transform: "scale(1.0)"},
         {transform: "scale(0.8)"},
         {transform: "scale(1.0)"},
@@ -324,7 +420,7 @@ rightArrow.addEventListener("click",function(){
         duration: 400
     })
     placeImages()
-})
+}
 
 function placeImages() {
     left = 0
@@ -340,33 +436,80 @@ function placeImages() {
         right = index+1
     }
 
-    Array.from(document.getElementsByClassName("blackLayerSides")).forEach(element => {
-        element.animate([
-            {opacity: 0.7},
-            {opacity: 0.8},
+    if (window.innerWidth >= 750) {
+        Array.from(document.getElementsByClassName("blackLayerSides")).forEach(element => {
+            element.animate([
+                {opacity: 0.7},
+                {opacity: 0.8},
+                {opacity: 1},
+                {opacity: 0.8},
+                {opacity: 0.7}
+            ], {
+                duration: 1500
+            })
+        })
+        document.getElementById("blackLayerCenter").animate([
+            {opacity: 0},
+            {opacity: 0.5},
             {opacity: 1},
-            {opacity: 0.8},
-            {opacity: 0.7}
+            {opacity: 0.5},
+            {opacity: 0}
         ], {
             duration: 1500
         })
-    })
-
-    document.getElementById("blackLayerCenter").animate([
-        {opacity: 0},
-        {opacity: 0.5},
-        {opacity: 1},
-        {opacity: 0.5},
-        {opacity: 0}
-    ], {
-        duration: 1500
-    })
+    } else {
+        document.getElementById("blackLayerHome").animate([
+            {opacity: 0},
+            {opacity: 0.5},
+            {opacity: 1},
+            {opacity: 0.5},
+            {opacity: 0}
+        ], {
+            duration: 1500
+        })
+    }
 
     setTimeout(function(){
-        document.getElementById("leftImage").src = images[left]
-        document.getElementById("rightImage").src = images[right]
+        leftImage.src = images[left]
+        rightImage.src = images[right]
     },600)
     setTimeout(function(){
-        document.getElementById("centerImage").src = images[index]
+        centerImage.src = images[index]
     },700)
+    setTimeout(function(){
+        homeImage.src = images[index]
+    },600)
+   
 }
+
+changePhotos(3500)
+
+function changePhotos(time) {
+    if (window.innerWidth < 750) {
+        if (shownListMenuElement.innerHTML == "Home") {
+            setTimeout(function(){
+                index+=1
+                if (index == images.length) {
+                    index = 0
+                }
+                if (shownListMenuElement.innerHTML == "Home") {
+                    placeImages()
+                }
+                changePhotos(5000)
+            },time)
+        } else {
+            console.log("elseeeee")
+            setTimeout(function(){
+                changePhotos(5000)
+            },time)
+        }
+    } else {
+        console.log("elseeeee")
+        setTimeout(function(){
+            changePhotos(5000)
+        },time)
+    }
+}
+
+
+
