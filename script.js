@@ -1,7 +1,8 @@
 listMenu = document.getElementById("listMenu")
 
+logo = document.getElementById("menuLogo")
 
-listMenuIcon = document.getElementById("menuIcon")
+listMenuIcon = document.getElementById("menuIconDiv")
 
 listHomeLabel = document.getElementById("listHome")
 
@@ -14,6 +15,43 @@ listAbout = document.getElementById("listAbout")
 images = ["scrollImages/Sofia_Final Headshot_SCREEN-2 2.jpg","scrollImages/IMG_9559 2.jpg","scrollImages/VANESSA_Final Headshot_1_SCREEN 2.jpg","scrollImages/IMG_9379 2.jpg","scrollImages/Ryan_FINAL HEADSHOT_2_SCREEN.jpg","scrollImages/IMG_8967 2.jpg","scrollImages/Julia_Final Headshot_3 2.jpg","scrollImages/IMG_7774 2.jpg","scrollImages/aayan 2.jpg","scrollImages/Edited_Prom_Photo_5 2.jpg"]
 
 index = 0
+
+Array.from(document.getElementsByClassName("barMenu")).forEach(menuElement => {
+    if (menuElement.tagName == "P") {
+        console.log("hi")
+        text = menuElement.innerHTML
+        menuElement.addEventListener("click", function() {
+            console.log(shownMenuElement)
+            if (menuElement != shownMenuElement && !switching) {
+                shownMenuElement.style.color = "#8F8F8E"
+                if (shownMenuElement.id == "about") {
+                    shownMenuElement.children[0].style.color = "#8F8F8E"
+                }
+                shownMenuElement = menuElement
+                shownMenuElement.style.color = "#444444"
+                showPage(shownMenuElement.innerHTML)
+            }
+        })
+    }
+})
+
+logo.addEventListener("click", function() {
+    if (shownListMenuElement.innerHTML != "Home" && window.innerWidth < 750) {
+        shownListMenuElement.style.color = "#8F8F8E"
+        shownListMenuElement = listHomeLabel
+        shownListMenuElement.style.color = "#444444"
+        showPage("Home")
+    }
+    else if (shownMenuElement.innerHTML != "Home" && window.innerWidth >= 750) {
+        shownMenuElement.style.color = "#8F8F8E"
+        if (shownMenuElement.id == "about") {
+            shownMenuElement.children[0].style.color = "#8F8F8E"
+        }
+        shownMenuElement = document.getElementById("home")
+        shownMenuElement.style.color = "#444444"
+        showPage(shownMenuElement.innerHTML)
+    }
+})
 
 
 listMenuElements = []
@@ -39,9 +77,9 @@ leftArrow = document.getElementById("leftArrow")
 
 rightArrow = document.getElementById("rightArrow")
 
-leftArrow.addEventListener("click",shiftImagesLeft)
+leftArrow.addEventListener("click",shiftImagesRight)
 
-rightArrow.addEventListener("click",shiftImagesRight)
+rightArrow.addEventListener("click",shiftImagesLeft)
 
 showingListMenu = false
 
@@ -311,7 +349,7 @@ function hideShowMenu() {
         homePhotoScroll.parentElement.removeChild(homePhotoScroll)
         photoOptions.appendChild(homePhoto)
     } else if (window.innerWidth > 750 && !showingMenu) {
-        console.log("hi")
+        console.log(shownMenuElement)
         showingMenu = true
         menuElements.forEach(element => {
             menu.appendChild(element)
@@ -352,23 +390,7 @@ currentPage = pages[0]
 document.getElementById("pageContent").appendChild(currentPage)
 
 
-Array.from(document.getElementsByClassName("barMenu")).forEach(menuElement => {
-    if (menuElement.tagName == "P") {
-        console.log("hi")
-        text = menuElement.innerHTML
-        menuElement.addEventListener("click", function() {
-            if (menuElement != shownMenuElement && !switching) {
-                shownMenuElement.style.color = "#8F8F8E"
-                if (shownMenuElement.id == "about") {
-                    shownMenuElement.children[0].style.color = "#8F8F8E"
-                }
-                shownMenuElement = menuElement
-                shownMenuElement.style.color = "#444444"
-                showPage(shownMenuElement.innerHTML)
-            }
-        })
-    }
-})
+
 
 switching = false
 
@@ -391,10 +413,10 @@ function showPage(pageDesc) {
 }
 
 function shiftImagesLeft() {
-    if (index == 0) {
-        index = images.length-1
+    if (index == images.length-1) {
+        index = 0
     } else {
-        index -= 1
+        index += 1
     }
     leftArrow.animate([
         {transform: "scale(1.0)"},
