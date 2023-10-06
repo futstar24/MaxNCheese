@@ -482,7 +482,7 @@ function placeImages() {
    
 }
 
-changePhotos(3500)
+changePhotos(1500)
 
 function changePhotos(time) {
     if (window.innerWidth < 750) {
@@ -495,18 +495,18 @@ function changePhotos(time) {
                 if (shownListMenuElement.innerHTML == "Home") {
                     placeImages()
                 }
-                changePhotos(5000)
+                changePhotos(3000)
             },time)
         } else {
             console.log("elseeeee")
             setTimeout(function(){
-                changePhotos(5000)
+                changePhotos(3000)
             },time)
         }
     } else {
         console.log("elseeeee")
         setTimeout(function(){
-            changePhotos(5000)
+            changePhotos(3000)
         },time)
     }
 }
