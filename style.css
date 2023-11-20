@@ -217,10 +217,10 @@ html, body {
     background-size: cover;
 }
 
-#couplesPhoto {
+#familyPhoto {
     width: 25vw;
     height: 37.5vw;
-    background: url("CouplesPhoto.jpeg") no-repeat;
+    background: url("FamilyPhoto.jpeg") no-repeat;
     background-size: cover;
 }
 
