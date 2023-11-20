@@ -18,10 +18,8 @@ index = 0
 
 Array.from(document.getElementsByClassName("barMenu")).forEach(menuElement => {
     if (menuElement.tagName == "P") {
-        console.log("hi")
         text = menuElement.innerHTML
         menuElement.addEventListener("click", function() {
-            console.log(shownMenuElement)
             if (menuElement != shownMenuElement && !switching) {
                 shownMenuElement.style.color = "#8F8F8E"
                 if (shownMenuElement.id == "about") {
@@ -108,7 +106,6 @@ homePhoto.parentElement.removeChild(homePhoto)
 
 Array.from(document.getElementsByClassName("listAboutElement")).forEach(element => {
     listSubMenuElements.push(element)
-    console.log("here")
     element.addEventListener("click",function() {
         if (shownListMenuElement != document.getElementById("listItemAbout")) {
             shownListMenuElement.style.color = "#8F8F8E"
@@ -134,9 +131,6 @@ Array.from(document.getElementsByClassName("listAboutElement")).forEach(element 
     })
 })
 
-document.body.addEventListener("click", function(){
-    console.log(document.querySelectorAll(":hover"))
-})
 
 
 
@@ -165,7 +159,6 @@ Array.from(document.getElementsByClassName("listMenuElement")).forEach(menuEleme
         text = menuElement.innerHTML
         menuElement.addEventListener("click", function() {
             if (menuElement != shownListMenuElement && !switching) {
-                console.log("here by mistake")
                 shownListMenuElement.style.color = "#8F8F8E"
                 shownListMenuElement = menuElement
                 shownListMenuElement.style.color = "#444444"
@@ -236,8 +229,6 @@ setTimeout(function() {
         descElement.innerHTML = testimonialList[i+1]
         testimonial.appendChild(nameElement)
         testimonial.appendChild(descElement)
-        console.log(testimonial)
-        console.log("added")
         testimonialGrid.appendChild(testimonial)
     }
 },1000)
@@ -328,12 +319,9 @@ hideShowMenu()
 
 
 function hideShowMenu() {
-    console.log("running")
     if (window.innerWidth < 750 && showingMenu) {
-        console.log("bye")
         showingMenu = false
         menuElements.forEach(element => {
-            console.log("removed")
             element.parentElement.removeChild(element)
         })
         document.body.appendChild(listMenuIcon)
@@ -349,7 +337,6 @@ function hideShowMenu() {
         homePhotoScroll.parentElement.removeChild(homePhotoScroll)
         photoOptions.appendChild(homePhoto)
     } else if (window.innerWidth > 750 && !showingMenu) {
-        console.log(shownMenuElement)
         showingMenu = true
         menuElements.forEach(element => {
             menu.appendChild(element)
@@ -520,13 +507,11 @@ function changePhotos(time) {
                 changePhotos(3000)
             },time)
         } else {
-            console.log("elseeeee")
             setTimeout(function(){
                 changePhotos(3000)
             },time)
         }
     } else {
-        console.log("elseeeee")
         setTimeout(function(){
             changePhotos(3000)
         },time)
