@@ -12,7 +12,7 @@ shownMenuElement = document.getElementById("home")
 
 listAbout = document.getElementById("listAbout")
 
-images = ["scrollImages/Sofia_Final Headshot_SCREEN-2 2.jpg","scrollImages/IMG_9559 2.jpg","scrollImages/VANESSA_Final Headshot_1_SCREEN 2.jpg","scrollImages/IMG_9379 2.jpg","scrollImages/Ryan_FINAL HEADSHOT_2_SCREEN.jpg","scrollImages/IMG_8967 2.jpg","scrollImages/Julia_Final Headshot_3 2.jpg","scrollImages/IMG_7774 2.jpg","scrollImages/aayan 2.jpg","scrollImages/Edited_Prom_Photo_5 2.jpg","scrollImages/IMG_3736-2.jpg","scrollImages/IMG_3351 3.jpeg","scrollImages/Edited Engagement Party Photos-6.jpg","scrollImages/Cassidy Final Headshot-4.jpeg","scrollImages/Jillian_Final Headshots-1.jpg"]
+images = ["scrollImages/Elena Headshots-4 2.jpg","scrollImages/Alia Fina Headshots-2 2.jpg","scrollImages/cassidy-1 2.jpg","scrollImages/Edited Engagement Party Photos-6 2.jpg","scrollImages/Edward Headshots-4 2.jpg","scrollImages/IMG_3351 2.jpg","scrollImages/IMG_8967 3.jpg","scrollImages/IMG_9559 2.jpg","scrollImages/Julia_Final Headshot_3 2.jpg","scrollImages/MAMMA MIA PROMO PIC-47 2.jpg","scrollImages/Ryan_FINAL HEADSHOT_2_SCREEN 2.jpg","scrollImages/Sofia_Final Headshot_SCREEN-2 2.jpg"]
 
 index = 0
 
@@ -405,7 +405,7 @@ function shiftImagesLeft() {
     } else {
         index += 1
     }
-    leftArrow.animate([
+    rightArrow.animate([
         {transform: "scale(1.0)"},
         {transform: "scale(0.8)"},
         {transform: "scale(1.0)"},
