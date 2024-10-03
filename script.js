@@ -12,7 +12,7 @@ shownMenuElement = document.getElementById("home")
 
 listAbout = document.getElementById("listAbout")
 
-images = ["scrollImages/Elena Headshots-4 2.jpg","scrollImages/Alia Fina Headshots-2 2.jpg","scrollImages/cassidy-1 2.jpg","scrollImages/Edited Engagement Party Photos-6 2.jpg","scrollImages/Edward Headshots-4 2.jpg","scrollImages/IMG_3351 2.jpg","scrollImages/IMG_8967 3.jpg","scrollImages/IMG_9559 2.jpg","scrollImages/Julia_Final Headshot_3 2.jpg","scrollImages/MAMMA MIA PROMO PIC-47 2.jpg","scrollImages/Ryan_FINAL HEADSHOT_2_SCREEN 2.jpg","scrollImages/Sofia_Final Headshot_SCREEN-2 2.jpg"]
+images = ["scrollImages/Sofia_Final Headshot_SCREEN-2 2.jpg","scrollImages/Elena Headshots-4 2.jpg","scrollImages/Alia Fina Headshots-2 2.jpg","scrollImages/cassidy-1 2.jpg","scrollImages/Edited Engagement Party Photos-6 2.jpg","scrollImages/Edward Headshots-4 2.jpg","scrollImages/IMG_3351 2.jpg","scrollImages/IMG_8967 3.jpg","scrollImages/IMG_9559 2.jpg","scrollImages/Julia_Final Headshot_3 2.jpg","scrollImages/MAMMA MIA PROMO PIC-47 2.jpg","scrollImages/Ryan_FINAL HEADSHOT_2_SCREEN 2.jpg"]
 
 index = 0
 
@@ -260,7 +260,7 @@ Array.from(document.getElementsByClassName("albumGridElement")).forEach(albumGri
                 albumText = element.innerHTML.toLowerCase().replace(/\s/g,"")
             }
         })
-        window.open("https://maxncheesephotography.pic-time.com/-"+albumText+"/gallery","_blank")
+        window.open("https://maxncheesephotography.pixieset.com/"+albumText,"_blank")
     })
     photoName = 'albums/'+originalText+'/CoverPhoto.jpeg'
     photo.style.background = `url("${photoName}") no-repeat`
