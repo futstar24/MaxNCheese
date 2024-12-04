@@ -240,7 +240,7 @@ html, body {
 }
 
 #photographerPhoto {
-    width: 50vw;
+    width: 22vw;
     height: 33vw;
     background: url("PhotographerPhoto.jpeg") no-repeat;
     background-size: cover;
